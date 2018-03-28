@@ -7,9 +7,8 @@
 //============================================================================
 #include<iostream>
 #include<cstdio>
-#include<algorithm>
+#include <stdlib.h>
 
-//#define pow2(n) (1 << (n))
 using namespace std;
 
 struct Node{
@@ -298,7 +297,7 @@ Node* Tree::DeleteAVL(Node* root, int data) {
 
 		}
 	}
-//root = balance(root);
+
 return root;
 }
 
