@@ -264,13 +264,13 @@ Node* Tree::DeleteAVL(Node* root, int data) {
 	else if(data < root->data) {
 
            root->left = DeleteAVL(root->left, data);
-           // root = balance(root);
+         //if(root != NULL) root = balance(root);  /// UNCOMMENT TO ADD ROTATION
             }
 
 	else if(data > root->data) {
 
             root->right = DeleteAVL(root->right, data);
-           //  root = balance(root);
+          // if(root != NULL) root = balance(root);   /// UNCOMMENT TO ADD ROTATION
          }
 
 	else {
