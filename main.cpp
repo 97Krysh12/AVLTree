@@ -187,9 +187,7 @@ Node* Tree::LeftRot(Node* root) {
 	 return temp;
 }
 
-Node* Tree::LeftRightRot(Node *root)
-
-{
+Node* Tree::LeftRightRot(Node *root) {
 
     Node *temp;
     temp = root->left;
@@ -200,9 +198,7 @@ Node* Tree::LeftRightRot(Node *root)
 }
 
 
-Node* Tree::RightLeftRot(Node* root)
-
-{
+Node* Tree::RightLeftRot(Node* root) {
 
     Node *temp;
     temp = root->right;
@@ -213,9 +209,7 @@ Node* Tree::RightLeftRot(Node* root)
 }
 
 
-Node* Tree::balance(Node *root)
-
-{
+Node* Tree::balance(Node *root) {
   int bf = setBalance(root);
     if (bf > 1) {
         if (setBalance(root->left) > 0)
@@ -249,9 +243,7 @@ Node* Tree::InsertAVL(Node* root, int data) {
 	return root;
 }
 
-void  Tree::display(Node *ptr, int level)
-
-	{
+void  Tree::display(Node *ptr, int level) {
 	    int i;
 	    if (ptr != NULL)
 	    {
