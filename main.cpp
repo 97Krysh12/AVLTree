@@ -192,9 +192,7 @@ Node* Tree::LeftRightRot(Node *root)
 {
 
     Node *temp;
-
     temp = root->left;
-
     root->left = RightRot(temp);
 
     return LeftRot(root);
@@ -207,9 +205,7 @@ Node* Tree::RightLeftRot(Node* root)
 {
 
     Node *temp;
-
     temp = root->right;
-
     root->right = LeftRot(temp);
 
     return RightRot(root);
@@ -277,13 +273,13 @@ Node* Tree::DeleteAVL(Node* root, int data) {
 	else if(data < root->data) {
 
            root->left = DeleteAVL(root->left, data);
-            root = balance(root);
+           // root = balance(root);
             }
 
 	else if(data > root->data) {
 
             root->right = DeleteAVL(root->right, data);
-             root = balance(root);
+           //  root = balance(root);
          }
 
 	else {
@@ -310,7 +306,7 @@ Node* Tree::DeleteAVL(Node* root, int data) {
 
 		}
 	}
-
+//root = balance(root);
 return root;
 }
 
@@ -407,7 +403,7 @@ int main() {
 
                 case 9: exit(1); break;
 
-	            default: cout << "Wrong Choice" << endl;
+	            default: cout << "Option not Found" << endl;
 
 	        }
 
