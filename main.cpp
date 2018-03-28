@@ -208,16 +208,17 @@ Node* Tree::RightLeftRot(Node* root) {
 
 
 Node* Tree::balance(Node *root) {
-  int bf = setBalance(root);
-    if (bf > 1) {
-        if (setBalance(root->left) > 0)
+  int bf = setBalance(root); // Calculates root's balance factor
+    if (bf > 1) {          // Tree is left-heavy
+        if (setBalance(root->left) > 0)  //if left child exists LL rotation
         	root = LeftRot(root);
-        else root = LeftRightRot(root);
+        else root = LeftRightRot(root);  // if right child exists, do LR rotation
     }
 
-    else if (bf < -1) {
-        if (setBalance(root->right) > 0) root = RightLeftRot(root);
-        else root = RightRot(root);
+    else if (bf < -1) {        // Tree is right-heavy
+        if (setBalance(root->right) > 0) // if left child exists RL rotation
+            root = RightLeftRot(root);
+        else root = RightRot(root);   // if right child exists, do RR rotation
 
     }
 
@@ -226,17 +227,17 @@ Node* Tree::balance(Node *root) {
 }
 
 Node* Tree::InsertAVL(Node* root, int data) {
-	if(root == NULL) {
+	if(root == NULL) {    // if node is empty, insert value to node
        root = NewNode(data);
 
 	}
 	else if(data < root->data) {
-	root->left = InsertAVL(root->left,data);
-	root = balance(root);
+	root->left = InsertAVL(root->left,data);   // if data is smaller than node, go left
+	root = balance(root);                     // After insertion, check for balance
 	}
-		else if(data >= root->data) {
+		else if(data >= root->data) {   // if data is larger than node, go right
 			root->right = InsertAVL(root->right,data);
-			root = balance(root);
+			root = balance(root);        // After insertion, check for balance
 		}
 	return root;
 }
