@@ -1,9 +1,8 @@
 //============================================================================
 // Name        : BinaryTreeAVL.cpp
-// Author      :
-// Version     :
-// Copyright   : Your copyright notice
-// Description : BinaryTreeAVL implementation C++, Ansi-style
+// Author      : Krystian Wojakiewicz
+// Nr Indeksu  : 235552
+// Description : BinaryTreeAVL implementation C++
 //============================================================================
 #include<iostream>
 #include<cstdio>
